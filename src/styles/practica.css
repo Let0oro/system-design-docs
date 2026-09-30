@@ -1,0 +1,240 @@
+/* Ejercicios interactivos: .practica (código), .respuesta (razonamiento) y .progreso */
+
+.practica,
+.respuesta,
+.progreso {
+	--practica-ok: #1a7f37;
+	--practica-fallo: #cf222e;
+	border: 1px solid var(--sl-color-gray-5);
+	border-left: 4px solid var(--sl-color-accent);
+	border-radius: 0.5rem;
+	padding: 0.9rem 1rem;
+	margin-block: 1.25rem;
+	background: var(--sl-color-bg-nav);
+	font-size: var(--sl-text-sm);
+}
+
+:root[data-theme='dark'] .practica,
+:root[data-theme='dark'] .respuesta,
+:root[data-theme='dark'] .progreso {
+	--practica-ok: #3fb950;
+	--practica-fallo: #f85149;
+}
+
+.respuesta {
+	border-left-color: var(--sl-color-gray-3);
+}
+
+.practica > * + *,
+.respuesta > * + *,
+.progreso > * + * {
+	margin-top: 0.75rem;
+}
+
+.practica-sin-js {
+	margin: 0;
+}
+
+.practica-cabecera {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.5rem;
+}
+
+.practica-etiqueta {
+	font-size: var(--sl-text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--sl-color-gray-3);
+}
+
+.practica-estado {
+	margin-left: auto;
+	font-size: var(--sl-text-xs);
+	padding: 0.1rem 0.5rem;
+	border-radius: 999px;
+	border: 1px solid var(--sl-color-gray-5);
+	color: var(--sl-color-gray-2);
+}
+
+.practica-acciones {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.practica-separador {
+	flex: 1;
+}
+
+.practica-btn {
+	font: inherit;
+	font-size: var(--sl-text-sm);
+	padding: 0.35rem 0.8rem;
+	border-radius: 0.4rem;
+	border: 1px solid var(--sl-color-gray-4);
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text);
+	cursor: pointer;
+}
+
+.practica-btn:hover:not(:disabled) {
+	border-color: var(--sl-color-accent);
+}
+
+.practica-btn.primario {
+	background: var(--sl-color-accent);
+	border-color: var(--sl-color-accent);
+	color: var(--sl-color-black);
+	font-weight: 600;
+}
+
+.practica-btn.discreto {
+	border-color: transparent;
+	color: var(--sl-color-gray-3);
+}
+
+.practica-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.practica-race {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-family: var(--__sl-font-mono, ui-monospace, monospace);
+	font-size: var(--sl-text-xs);
+}
+
+.practica-guardado {
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-3);
+}
+
+.practica-aviso {
+	margin: 0;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.4rem;
+	background: var(--sl-color-gray-6);
+	color: var(--sl-color-gray-2);
+}
+
+.practica-resultado {
+	border-radius: 0.4rem;
+	padding: 0.6rem 0.8rem;
+	border: 1px solid var(--sl-color-gray-5);
+}
+
+.practica-resultado.ok {
+	border-color: var(--practica-ok);
+}
+
+.practica-resultado.fallo {
+	border-color: var(--practica-fallo);
+}
+
+.practica-resultado-titulo {
+	margin: 0;
+	font-weight: 600;
+}
+
+.practica-resultado.ok .practica-resultado-titulo {
+	color: var(--practica-ok);
+}
+
+.practica-resultado.fallo .practica-resultado-titulo {
+	color: var(--practica-fallo);
+}
+
+.practica-pista-race {
+	margin: 0.4rem 0 0;
+}
+
+.practica-lista-tests {
+	list-style: none;
+	padding: 0;
+	margin: 0.4rem 0 0;
+	font-family: var(--__sl-font-mono, ui-monospace, monospace);
+	font-size: var(--sl-text-xs);
+}
+
+.practica-lista-tests .t-pass {
+	color: var(--practica-ok);
+}
+
+.practica-lista-tests .t-fail {
+	color: var(--practica-fallo);
+}
+
+.practica-lista-tests span,
+.practica-tiempo {
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-xs);
+}
+
+.practica-tiempo {
+	margin: 0.3rem 0 0;
+}
+
+.practica-resultado pre {
+	max-height: 22rem;
+	overflow: auto;
+	font-size: var(--sl-text-xs);
+	padding: 0.5rem;
+	margin: 0.4rem 0 0;
+	background: var(--sl-color-bg);
+	border-radius: 0.3rem;
+	white-space: pre-wrap;
+}
+
+.practica details.practica-plegable,
+.practica-resultado details {
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+}
+
+.practica details.practica-plegable > summary {
+	font-weight: 500;
+	color: var(--sl-color-gray-2);
+}
+
+.practica details.practica-plegable[open] > summary {
+	margin-bottom: 0.4rem;
+}
+
+.practica-nota-texto,
+.respuesta-texto {
+	width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	font-size: var(--sl-text-sm);
+	line-height: 1.5;
+	padding: 0.5rem 0.6rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.4rem;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text);
+	resize: vertical;
+}
+
+.practica-nota-texto:focus,
+.respuesta-texto:focus {
+	outline: 2px solid var(--sl-color-accent);
+	outline-offset: 0;
+}
+
+.progreso-resumen {
+	margin: 0;
+	font-weight: 500;
+}
+
+.progreso-tabla {
+	width: 100%;
+	display: table;
+	font-size: var(--sl-text-xs);
+}

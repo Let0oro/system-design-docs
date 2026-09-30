@@ -1,0 +1,23 @@
+/* Bloques plegables: pistas escalonadas y soluciones */
+.sl-markdown-content details {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	margin-block: 0.75rem;
+	background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+}
+
+.sl-markdown-content details > summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.sl-markdown-content details[open] > summary {
+	margin-bottom: 0.5rem;
+}
+
+/* Las listas de verificación del panel de revisión, algo más aireadas */
+.sl-markdown-content li:has(> input[type='checkbox']) {
+	list-style: none;
+	margin-left: -1.25rem;
+}

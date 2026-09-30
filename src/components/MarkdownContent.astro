@@ -1,0 +1,13 @@
+---
+// Envuelve el contenido de Starlight para cargar el código de las prácticas
+// solo en las páginas que tienen ejercicios interactivos.
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+---
+
+<Default><slot /></Default>
+
+<script>
+	if (document.querySelector('.practica, .respuesta, .progreso')) {
+		import('../scripts/practica/index').then((m) => m.iniciar());
+	}
+</script>

@@ -1,0 +1,47 @@
+---
+title: System Design desde cero
+description: Temario completo para aprender diseño de sistemas y arquitectura de software, de los fundamentos a los sistemas distribuidos.
+template: splash
+hero:
+  tagline: De "sé programar" a "sé diseñar sistemas y defender cada decisión". Nueve fases, un proyecto que crece contigo y un panel de revisión para medir el progreso.
+  actions:
+    - text: Cómo funciona el temario
+      link: /guia/como-funciona/
+      icon: right-arrow
+    - text: Ver el roadmap
+      link: /guia/roadmap/
+      icon: document
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Tres dinámicas, una misma lección
+
+<CardGrid>
+	<Card title="Proyecto: Taquilla" icon="rocket">
+		Una plataforma de venta de entradas que evoluciona fase a fase. Cada lección termina con una decisión real: un diagrama C4, un ADR y, a veces, código en Go.
+	</Card>
+	<Card title="Kata de diseño" icon="puzzle">
+		Problemas cronometrados con la solución de referencia plegada. Entrenan el *proceso*: requisitos → estimación → diseño → profundizar → fallos.
+	</Card>
+	<Card title="Socrática" icon="comment-alt">
+		Preguntas para predecir antes de leer, preguntas de control y pistas escalonadas. Lo que no se resuelva, se trae a una sesión de tutor.
+	</Card>
+	<Card title="Panel de revisión" icon="approve-check">
+		La misma rúbrica de 10 dimensiones para todo diseño, del primer boceto al capstone. Así se ve el progreso.
+	</Card>
+</CardGrid>
+
+## Por dónde empezar
+
+<CardGrid>
+	<LinkCard title="1 · Cómo funciona" href="/guia/como-funciona/" description="Anatomía de una lección y cómo usar pistas, katas y sesiones de tutor." />
+	<LinkCard title="2 · El proyecto Taquilla" href="/guia/taquilla/" description="El enunciado del sistema que vas a diseñar durante todo el temario." />
+	<LinkCard title="3 · Go para sistemas" href="/go/" description="Cuatro lecciones cortas: lo justo de Go para los ejercicios." />
+	<LinkCard title="4 · Fase 0" href="/fase-0/" description="Redes, sistema operativo, bases de datos y números que todo diseñador debe saber." />
+</CardGrid>
+
+## Fuentes primarias
+
+*Designing Data-Intensive Applications* (Kleppmann) · *Fundamentals of Software Architecture* (Richards & Ford) · *System Design Primer* (donnemartin) · *c4model.com* (Simon Brown). Las complementarias están en el [roadmap](/guia/roadmap/#1-fuentes).
