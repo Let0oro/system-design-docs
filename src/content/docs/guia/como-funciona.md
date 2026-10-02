@@ -111,6 +111,11 @@ taquilla/
 └── ...                 # el código de Taquilla, cuando lo haya
 ```
 
+Para poder crear la estructura directamente en bash, puedes ejecutar este script en tu cmd:
+```bash
+bash -c "mkdir -p taquilla/labs taquilla/docs/{adr,c4,katas,notas}"
+```
+
 Es tu portfolio al final del temario: todas las decisiones, su porqué y cómo evolucionaron.
 
 ## Ritmo recomendado
