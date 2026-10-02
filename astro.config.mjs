@@ -15,7 +15,7 @@ const fase = (label, directory) => ({
 // https://astro.build/config
 export default defineConfig({
   site: "https://let0oro.github.io",
-  base: process.env.NODE_ENV === '/system-design-docs/',
+  base: '/system-design-docs/',
   // Bloques de práctica (```go practica```, ```respuesta```…): ver src/practica/plugin.mjs
   markdown: { processor: satteri({ mdastPlugins: [practicaPlugin()] }) },
   integrations: [
